@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yeni Yılın Kutlu Olsun</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#fbc2eb,#a6c1ee);
+    font-family: Arial, sans-serif;
+    overflow:hidden;
+}
+
+.card{
+    background:white;
+    padding:30px 25px;
+    border-radius:20px;
+    text-align:center;
+    width:90%;
+    max-width:360px;
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+    animation: fadeIn 1s ease;
+    z-index:2;
+}
+
+h1{
+    color:#ff4d6d;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:1.1rem;
+    color:#555;
+    line-height:1.6;
+}
+
+.icon{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+/* konfeti */
+.confetti{
+    position:absolute;
+    top:-10px;
+    width:8px;
+    height:8px;
+    animation: fall linear infinite;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:scale(.9);}
+    to{opacity:1;transform:scale(1);}
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="icon">🎆</div>
+    <h1>Yeni Yılın Kutlu Olsun</h1>
+    <p>
+        Yeni yıl sana<br>
+        mutluluk, huzur<br>
+        ve güzel anılar getirsin ✨
+    </p>
+</div>
+
+<script>
+const colors = ["#ff4d6d","#ffd166","#6ae3ff","#c77dff","#95ff9f"];
+
+for(let i=0;i<50;i++){
+    const c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random()*100 + "vw";
+    c.style.backgroundColor =
+        colors[Math.floor(Math.random()*colors.length)];
+    c.style.animationDuration =
+        (3 + Math.random()*3) + "s";
+    document.body.appendChild(c);
+}
+</script>
+
+</body>
+</html>
